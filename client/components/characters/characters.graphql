@@ -1,0 +1,16 @@
+query getCharacters($limit: Int, $after: String) {
+  allPeople(first: $limit, after: $after) {
+    people {
+      name
+      gender
+      homeworld {
+        name
+      }
+    }
+    totalCount
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

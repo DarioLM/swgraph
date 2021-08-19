@@ -1,0 +1,38 @@
+.main h1 {
+  text-transform: uppercase;
+  border-left: 5px solid #daa80c;
+  padding-left: 10px;
+}
+
+.main {
+  color: white;
+  grid-template-rows: 5% 85% 10%;
+  padding: 15px 30px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap: 15px;
+  align-items: center;
+}
+
+.list p {
+  text-transform: capitalize;
+}
+
+.list div {
+  border-color: white;
+  border-style: groove;
+  border-width: 0px 0px 1px 0px;
+}
+
+.button {
+  border: 2px solid #ef00ffa6;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 10px;
+  cursor: pointer;
+  background: #b400ff99;
+  margin: 20px 0px;
+}
