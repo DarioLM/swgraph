@@ -4,12 +4,8 @@ import Head from 'next/head'
 import Logo from "../components/Logo";
 import Link from "next/link";
 import type { AppProps } from 'next/app'
-import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
-
-const client = new ApolloClient({
-  uri: 'http://localhost:8080/',
-  cache: new InMemoryCache(),
-});
+import { ApolloProvider } from '@apollo/client';
+import ApolloClient from "../graphql/ApolloClient";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -34,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </Link>
         </div>
       </header>
-      <ApolloProvider client={client}>
+      <ApolloProvider client={ApolloClient}>
         <main className={styles.main}>
           <Component {...pageProps} />
         </main>

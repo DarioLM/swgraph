@@ -7,7 +7,6 @@ interface HeroCarouselProps {
 
 const HeroCarousel = ({ children }: HeroCarouselProps) => {
   const [indexHero, setIndexHero] = useState(0);
-  console.log(children)
   useEffect(() => {
     const interval = setInterval(() => setIndexHero(iH => (iH + 1) % children.length), 5000);
     return () => clearInterval(interval)

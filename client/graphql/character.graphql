@@ -1,0 +1,23 @@
+query getCharacter($id: ID) {
+  person(id: $id) {
+    name
+    gender
+    birthYear
+    eyeColor
+    hairColor
+    height
+    mass
+    skinColor
+    homeworld {
+      name
+      climates
+    }
+    filmConnection {
+      films {
+        title
+        releaseDate
+        director
+      }
+    }
+  }
+}
