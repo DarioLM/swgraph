@@ -14,23 +14,27 @@ const Characters = () => {
   if (error) return <div> Error </div>
   return (
     <div className={styles.main}>
-      <h1>Characters</h1>
+      <div className={styles.header}>
+        <h1>Characters</h1>
+        {characters.nextCursor &&
+          <div
+            className={styles.button}
+            onClick={() => fetchMore({ variables: { after: characters.nextCursor } })
+              .then(({ data }) => setCharacters(characters => ({ list: [...characters.list, ...data.allPeople.people], nextCursor: data.allPeople.pageInfo.hasNextPage ? data.allPeople.pageInfo.endCursor : "" })))}
+          >
+            Load more
+          </div>
+        }
+      </div>
       <div className={styles.list}>{characters?.list?.map(character =>
-        <div key={character.id}>
-          <p><strong>Name:</strong> {character.name}</p>
-          <p><strong>Gender:</strong> {character.gender}</p>
-          <p><strong>Homeworld:</strong> {character?.homeworld.name}</p>
-          <Link href={`/characters/${character.id}`}>Detail</Link>
-        </div>)}</div>
-      {characters.nextCursor &&
-        <div
-          className={styles.button}
-          onClick={() => fetchMore({ variables: { after: characters.nextCursor } })
-            .then(({ data }) => setCharacters(characters => ({ list: [...characters.list, ...data.allPeople.people], nextCursor: data.allPeople.pageInfo.hasNextPage ? data.allPeople.pageInfo.endCursor : "" })))}
-        >
-          Load more
-        </div>
-      }
+        <Link href={`/characters/${character.id}`}>
+          <div key={character.id}>
+            <p><strong>Name:</strong> {character.name}</p>
+            <p><strong>Gender:</strong> {character.gender}</p>
+            <p><strong>Homeworld:</strong> {character?.homeworld.name}</p>
+          </div>
+        </Link>)}
+      </div>
     </div>
   )
 };

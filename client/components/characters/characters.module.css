@@ -5,16 +5,27 @@
 }
 
 .main {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 15% 85%;
   color: white;
-  grid-template-rows: 5% 85% 10%;
   padding: 15px 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85px;
 }
 
 .list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: 140px;
   grid-gap: 15px;
   align-items: center;
+  overflow: auto;
 }
 
 .list p {
@@ -24,7 +35,31 @@
 .list div {
   border-color: white;
   border-style: groove;
-  border-width: 0px 0px 1px 0px;
+  border-width: 0px 0px 2px 0px;
+  cursor: pointer;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.list div:hover {
+  border-color: #daa90b;
+  background: white;
+  color: #00041f;
+  border-radius: 3px;
+  animation: changeBackground 0.1s linear;
+}
+
+@keyframes changeBackground {
+  from {
+    background-color: #00041f;
+    color: white;
+    border-color: white;
+  }
+  to {
+    background-color: white;
+    color: #00041f;
+    border-color: #daa90b;
+  }
 }
 
 .button {
@@ -34,5 +69,5 @@
   padding: 10px;
   cursor: pointer;
   background: #b400ff99;
-  margin: 20px 0px;
+  height: 45px;
 }

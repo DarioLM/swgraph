@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import HeroCarousel from "../components/common/HeroCarousel";
 
-
 const Home: NextPage = () =>
   <HeroCarousel>
     <img
