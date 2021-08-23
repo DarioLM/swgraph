@@ -1,8 +1,9 @@
 import '../styles/globals.css'
+import HistoryProvider from "../Providers/History";
 import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import Logo from "../components/Logo";
-import Link from "next/link";
+import Menu from "../components/common/Menu";
 import type { AppProps } from 'next/app'
 import { ApolloProvider } from '@apollo/client';
 import ApolloClient from "../graphql/ApolloClient";
@@ -19,28 +20,26 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
       </Head>
-      <header className={styles.header}>
-        <div className={styles.search}>
-          <Logo type="header" />
-          <div />
-        </div>
-        <div className={styles.menu}>
-          <Link href="/characters">
-            Characters
-          </Link>
-        </div>
-      </header>
-      <ApolloProvider client={ApolloClient}>
-        <main className={styles.main}>
-          <Component {...pageProps} />
-        </main>
-      </ApolloProvider>
-      <footer className={styles.footer}>
-        <Logo type="footer" />
-        <span className={styles.logo}>
-          © Powered by Darío LM
-        </span>
-      </footer>
+      <HistoryProvider>
+        <header className={styles.header}>
+          <div className={styles.search}>
+            <Logo type="header" />
+            <div />
+          </div>
+          <Menu />
+        </header>
+        <ApolloProvider client={ApolloClient}>
+          <main className={styles.main}>
+            <Component {...pageProps} />
+          </main>
+        </ApolloProvider>
+        <footer className={styles.footer}>
+          <Logo type="footer" />
+          <span className={styles.logo}>
+            © Powered by Darío LM
+          </span>
+        </footer>
+      </HistoryProvider>
     </div>
   )
 }

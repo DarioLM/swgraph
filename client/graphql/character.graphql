@@ -1,5 +1,6 @@
 query getCharacter($id: ID) {
   person(id: $id) {
+    id
     name
     gender
     birthYear

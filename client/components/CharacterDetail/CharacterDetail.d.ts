@@ -1,6 +1,7 @@
 export interface CharacterDetailProps {
   character: {
     __typename: string,
+    id: string,
     birthYear: string,
     eyeColor: string,
     filmConnection: any

@@ -3,9 +3,8 @@ import styles from "./CharacterDetail.module.css";
 import Link from "next/link";
 
 const CharacterDetail = ({ character }: CharacterDetailProps) => {
-  console.log(character);
   return (
-    <div className={styles.detail}>
+    <div key={character.id} className={styles.detail}>
       <div className={styles.character}>
         <h1>{character.name}</h1>
         <p><strong>Gender:</strong> {character.gender}</p>
@@ -13,7 +12,7 @@ const CharacterDetail = ({ character }: CharacterDetailProps) => {
         <p><strong>Mass:</strong> {character.mass} kg</p>
         <p><strong>Height:</strong> {character.height} cm</p>
         <p><strong>Homeworld:</strong> {character.homeworld.name} ({character.homeworld.climates[0]})</p>
-        <div className={styles.button}> <Link href="/characters">Back</Link> </div>
+        <Link href="/characters"><div className={styles.button}>Back</div></Link>
       </div>
       <div className={styles.films}>
         <h1>Films:</h1>

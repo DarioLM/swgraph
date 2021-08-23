@@ -27,7 +27,7 @@ const Characters = () => {
         }
       </div>
       <div className={styles.list}>{characters?.list?.map(character =>
-        <Link href={`/characters/${character.id}`}>
+        <Link key={character.id} href={`/characters/${character.id}/${character.name}`}>
           <div key={character.id}>
             <p><strong>Name:</strong> {character.name}</p>
             <p><strong>Gender:</strong> {character.gender}</p>

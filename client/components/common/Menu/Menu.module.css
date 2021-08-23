@@ -1,0 +1,51 @@
+.menu {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  width: 100%;
+  border-width: 2px 0px 2px 0px;
+  border-style: groove;
+  border-color: #00044c;
+  justify-items: center;
+}
+
+.menuItem {
+  height: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  height: 100%;
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+}
+
+.menuItem a {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0px 20px;
+  border-width: 0px 2px 0px 2px;
+  border-color: #e2e2e2;
+  border-style: groove;
+}
+
+.recentList {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-self: baseline;
+  padding-left: 15px;
+}
+
+.recentList p {
+  margin: 0;
+  color: #00041f;
+  font-size: 0.9em;
+  margin-right: 15px;
+}
+
+.recentList div {
+  border: none;
+}

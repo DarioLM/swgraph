@@ -56,30 +56,6 @@
   flex-grow: 1;
 }
 
-.menu {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  border-width: 2px 0px 2px 0px;
-  border-style: groove;
-  border-color: #00044c;
-}
-
-.menu a {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  padding: 0px 20px;
-  border-width: 0px 2px 0px 2px;
-  border-color: #e2e2e2;
-  border-style: groove;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
 .search {
   background: url(/assets/header_bg.jpg);
   background-size: cover;
