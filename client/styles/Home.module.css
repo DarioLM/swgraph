@@ -57,6 +57,7 @@
 }
 
 .search {
+  align-items: center;
   background: url(/assets/header_bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -131,6 +132,7 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+  font-size: 0.8em;
 }
 
 @media (max-width: 600px) {
